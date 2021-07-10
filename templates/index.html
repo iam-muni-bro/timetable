@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Time-Table</title>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.css'>
+
+    <!-- custom css -->
+    <style>
+        div.columns {
+            margin-top: 50px;
+        }
+
+        h1 {
+            color: green !important;
+            margin-bottom: 20px;
+
+        }
+
+        .table td {
+            font-size: 17px
+        }
+
+        .table th {
+            font-size: 17px
+        }
+    </style>
+</head>
+
+<body>
+    <div class='container has-text-centered'>
+        <div class='columns is-mobile is-centered'>
+            <div class='column is-8'>
+                <div>
+                    <h1 class='title'>Time-Table</h1>
+                    <div class="level-left">
+                        <div class="level-item">
+                            <h3>Class: CSE-II B.Tech</h3>
+                        </div>
+                        <div class="level-right">
+                            <div class="level-item">
+                                <h3>Section: C</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr>
+                </div>
+                <table class='table is-bordered is-centered'>
+                    <thead>
+                        <tr>
+                            {% for time in dateAndTime %}
+                            <th>{{ time }}</th>
+                            {% endfor %}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            {% for sub in day.m %}
+                            <td><a href="#">{{ sub }}</a></td>
+                            {% endfor %}
+                        </tr>
+
+                        <tr>
+                            {% for sub in day.t %}
+                            <td><a href="#">{{ sub }}</a></td>
+                            {% endfor %}
+                        </tr>
+
+                        <tr>
+                            {% for sub in day.w %}
+                            <td><a href="#">{{ sub }}</a></td>
+                            {% endfor %}
+                        </tr>
+
+                        <tr>
+                            {% for sub in day.td %}
+                            <td><a href="#">{{ sub }}</a></td>
+                            {% endfor %}
+                        </tr>
+
+                        <tr>
+                            {% for sub in day.f %}
+                            <td><a href="#">{{ sub }}</a></td>
+                            {% endfor %}
+                        </tr>
+
+                        <tr>
+                            {% for sub in day.s %}
+                            <td><a href="#">{{ sub }}</a></td>
+                            {% endfor %}
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
